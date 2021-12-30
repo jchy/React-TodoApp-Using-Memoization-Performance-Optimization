@@ -20,10 +20,18 @@ const TodoItem = ({ title, id, status, handleDelete, handleToggle }) => {
   /** Expensive calculation */
   const time = delay(200);
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "1rem"
+      }}
+    >
       <h3>{title}</h3>
-      <button onClick={() => handleToggle(id)}> {`${status}`}</button>
       <div>{time}</div>
+      <h3>{`${status ? "DONE" : "PENDING"}`}</h3>
+      <button onClick={() => handleToggle(id)}>TOGGLE</button>
     </div>
   );
 };
